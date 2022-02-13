@@ -1,0 +1,32 @@
+<div class="page-login-wrap">
+  <div class="login-top">
+    <div class="login-content">
+      <div class="name-logo">
+        <img src="/assets/icon/logo.png" alt="" class="logo">
+        <h1>运营管理平台</h1>
+      </div>
+      <form nz-form class="form-wrap" [formGroup]="validateForm" (ngSubmit)='onFormSubmit($event)'>
+        <nz-form-item class="form-item">
+          <nz-form-control nzErrorTip="请输入用户名!">
+            <nz-input-group nzPrefixIcon="user">
+              <input formControlName="userName" nz-input placeholder="用户名" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item >
+        <nz-form-item class="form-item">
+          <nz-form-control nzErrorTip="请输入密码!">
+            <nz-input-group nzPrefixIcon="lock">
+              <input formControlName="password" nz-input placeholder="密码" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item >
+        <nz-form-item class="login-btn-wrap">
+          <button nz-button nzType="primary" class="login-btn">登录</button>
+        </nz-form-item >
+      </form>
+    </div>
+  </div>
+  <footer class="footer-wrap">
+    CopyRight©2020 xxx公司
+  </footer>
+</div>

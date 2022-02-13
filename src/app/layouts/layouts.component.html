@@ -1,0 +1,47 @@
+<div *ngIf='initOk'>
+  <nz-layout>
+    <nz-sider 
+      nzCollapsible 
+      [(nzCollapsed)]="isCollapsed" 
+      [nzTrigger]="null"
+      class="page-side-wrap"
+      [nzWidth]='260'
+    >
+      <div class="page-aside-header">
+        <img src="/assets/icon/logo.png" class='logo' alt="">
+        <h1 [hidden]='isCollapsed'>管理平台</h1>
+      </div>
+      <ul nz-menu nzTheme='dark' nzMode="inline" class="menu-wrap" (nzClick)='onMenuClick($event)'>
+        <li nz-menu-item [nzSelected]="getSelected('/welcome')" routerLink='/welcome'>
+          <i nz-icon nzType="smile"></i>
+          <span>欢迎</span>
+        </li>
+        <li nz-submenu nzTitle="主播管理" nzIcon="user" [nzOpen]="getSelected('/anchor')">
+          <ul>
+            <li nz-menu-item [nzSelected]="getSelected('/anchor/list')" routerLink='/anchor/list'>主播列表</li>
+            <li nz-menu-item [nzSelected]="getSelected('/anchor/approve')" routerLink='/anchor/approve'>主播审核</li>
+          </ul>
+        </li>
+        <li nz-submenu nzTitle="数据管理" nzIcon="alert" [nzOpen]="getSelected('/animation')">
+          <ul>
+            <li nz-menu-item [nzSelected]="getSelected('/animation/list')" routerLink='/animation/list'>动效列表</li>
+            <li nz-menu-item [nzSelected]="getSelected('/anchor/approve')" routerLink='/anchor/approve'>新</li>
+          </ul>
+        </li>
+        <li nz-menu-item>
+          <i nz-icon nzType="file"></i>
+          <span>File</span>
+        </li>
+      </ul>
+    </nz-sider>
+    <nz-layout >
+      <nz-header class="page-header-wrap">
+        <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'" (click)="isCollapsed = !isCollapsed"></i>
+      </nz-header>
+      <nz-content class="page-content-wrap">
+        <router-outlet></router-outlet>
+      </nz-content>
+      <nz-footer>CopyRight©2020 xx公司</nz-footer>
+    </nz-layout>
+  </nz-layout>
+</div>

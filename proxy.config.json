@@ -1,0 +1,10 @@
+{
+  "/api-manage": {
+    "target": "",
+    "changeOrigin": true
+  },
+  "/api-common": {
+    "target": "",
+    "changeOrigin": true
+  }
+}

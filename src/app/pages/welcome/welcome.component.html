@@ -1,0 +1,40 @@
+<nz-card>
+  <div>kdkdl</div>
+  <input 
+    type="text" 
+    [formControl]='userNameControl' 
+    placeholder="请输入姓名"
+    div-color
+  />
+  <div div-color>test directive(div-color)</div>
+
+  <a href="#" (click)='onClick($event)'>click</a>
+  <div nz-row>
+    <div nz-col nzSpan='12'>jjdjddj</div>
+    <div nz-col nzSpan='12'>jjdjddj</div>
+  </div>
+  <form [formGroup]='userInfoGroup'>
+    <input 
+      type="text" 
+      formControlName='userName' 
+      placeholder="请输入用户姓名"
+    />
+    <input 
+      type="text" 
+      formControlName='userAge' 
+      placeholder="请输入用户年龄"
+    />
+  </form>
+  <form [formGroup]='testBuildGroup'>
+    <input 
+      type="text" 
+      formControlName='userName' 
+      placeholder="请输入用户姓名"
+    />
+    <input 
+      type="text" 
+      formControlName='userAge' 
+      placeholder="请输入用户年龄"
+    />
+  </form>
+</nz-card>
