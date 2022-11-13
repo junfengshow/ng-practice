@@ -14,7 +14,7 @@ import AnchorList from './anchor/anchor.list';
 import AnchorApprove from './anchor/anchor.approve';
 import SourceModule from './source/source.module';
 import SourceAnimation from './source/source.animation';
-import { LoginModule } from './login/login.module'
+import { LoginModule } from './login/login.module';
 
 // 布局
 import { LayoutsModule } from '../layouts/layouts.module'
@@ -48,8 +48,7 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
   // 标记组件等
-  declarations: [
-  ],
+  declarations: [],
   // 注入服务
   providers: [HttpService, HttpAnchorService]
 })

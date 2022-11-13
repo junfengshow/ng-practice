@@ -6,9 +6,10 @@ import AnchorApprove from './anchor.approve';
 import TableComponent from './components/table.component';
 import ButtonDirective from './directives/button.directive';  
 import NpIfDirective from './directives/npIf.directive';
-import { InputDirective } from 'src/app/directives/input.directive';
-
+// import { InputDirective } from 'src/app/directives/input.directive';
 import { NzModalModule, NzButtonModule } from 'ng-zorro-antd';
+import { WelcomeService } from '../welcome/welcome.service';
+import { MineCommonModule } from '../common.module';
 
 @NgModule({
   declarations: [
@@ -16,15 +17,16 @@ import { NzModalModule, NzButtonModule } from 'ng-zorro-antd';
     AnchorApprove,
     TableComponent,
     ButtonDirective,
-    InputDirective,
+    // InputDirective,
     NpIfDirective,
   ],
   imports: [
     ComponentsCommonModule,
     NzModalModule,
     NzButtonModule,
+    MineCommonModule,
   ],
-  providers: [],
+  providers: [WelcomeService],
 })
 class AnchorModule {};
 export default AnchorModule;

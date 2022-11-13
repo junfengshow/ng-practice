@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core'
-// import { CommonModule } from '@angular/common'
+import { CommonModule } from '@angular/common'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { NzCardModule, NzInputModule, NzGridModule } from 'ng-zorro-antd'
+import { MineCommonModule } from '../common.module'
 import { WelcomeComponent } from './welcome.component'
-// import { InputDirective } from '../../directives/input.directive'
+import { WelcomeService } from './welcome.service';
 @NgModule({
   declarations: [
     WelcomeComponent, 
@@ -15,11 +16,13 @@ import { WelcomeComponent } from './welcome.component'
     NzCardModule, 
     NzInputModule, 
     NzGridModule,
+    CommonModule,
+    MineCommonModule,
   ],
   exports: [
     WelcomeComponent, 
     // InputDirective,
   ],
-  providers: []
+  providers: [WelcomeService]
 })
 export class WelcomeModule {}

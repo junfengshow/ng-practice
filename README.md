@@ -24,3 +24,5 @@
 如何在一个页面注入多个根组建。
 
 在app.module中bootstrap注入多个组件，同时组件的selector分别对应index.html中的标签。
+
+## rxjs

@@ -7,6 +7,8 @@ import {
   ViewChild 
 } from '@angular/core';
 import TableComponent from './components/table.component';
+import { Observable } from 'rxjs';
+import { WelcomeService } from '../welcome/welcome.service';
 
 @Component({
   selector: 'anchor-list',
@@ -17,6 +19,7 @@ import TableComponent from './components/table.component';
         <anchor-table-content
           [loading]='loading'
         ></anchor-table-content>
+        <div div-color>div color</div>
       </ng-template>
       dkdkdek
     </wrap-page>
@@ -27,9 +30,26 @@ class AnchorList implements OnInit, AfterViewInit, AfterContentInit, AfterViewCh
   public loading: boolean = false;
   @ViewChild(TableComponent)
   private viewChild: any;
-  constructor () {}
+  constructor (
+    private wcService: WelcomeService
+  ) {}
   ngOnInit(): void {
     // console.log('ngOnInit viewChild', this.viewChild)
+    const l = new Observable((observer) => {
+      observer.next();
+    });
+    
+    l.subscribe({
+      next: () => {
+        console.log('subscribe 1111111')
+      }
+    });
+    l.subscribe({
+      next: () => {
+        console.log('subscribe 2222222')
+      }
+    });
+    console.log(this.wcService.getItems())
   }
 
   ngAfterViewInit(): void {

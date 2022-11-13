@@ -13,6 +13,7 @@
     <div nz-col nzSpan='12'>jjdjddj</div>
     <div nz-col nzSpan='12'>jjdjddj</div>
   </div>
+  <h3>userInfoGroup</h3>
   <form [formGroup]='userInfoGroup'>
     <input 
       type="text" 
@@ -24,7 +25,9 @@
       formControlName='userAge' 
       placeholder="请输入用户年龄"
     />
+    <button (click)="onUserInfoSubmit()">提交</button>
   </form>
+  <h3>testBuildGroup</h3>
   <form [formGroup]='testBuildGroup'>
     <input 
       type="text" 
@@ -37,4 +40,9 @@
       placeholder="请输入用户年龄"
     />
   </form>
+</nz-card>
+<nz-card>
+  <ul>
+    <li *ngFor="let item of list">{{item.value}}</li>
+  </ul>
 </nz-card>
